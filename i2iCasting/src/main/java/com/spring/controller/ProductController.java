@@ -92,6 +92,12 @@ public class ProductController {
 		attributes.addFlashAttribute("DeleteMessage", "Product has been deleted Successfully");
 		return "redirect:/product";
 	   }
+
+	
+	
+	
+	
+	
 	
 	
 }

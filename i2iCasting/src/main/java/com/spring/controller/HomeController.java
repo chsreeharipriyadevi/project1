@@ -45,10 +45,11 @@ public class HomeController {
 	
 
     @RequestMapping(value="/",  method=RequestMethod.GET)
-    public String homePage(HttpSession session)
+    public String homePage(HttpSession session,Model m)
     {
     	session.setAttribute("categoryList", categoryDAO.list());
     	session.setAttribute("ProductList",productDAO.list());
+    	m.addAttribute("UserClickedshowproduct","true");
     	/*session.setAttribute("ListProduct", productDAO.getProductByCategoryID(id));
     	*/
     	
@@ -136,15 +137,16 @@ public class HomeController {
 		return "catproducts";
 	}
 	
-
-	  @RequestMapping(value ="ShowProduct/{id}" )
+/*
+	  @RequestMapping(value ="nav/{id}" )
 	    public String ShowProduct(@PathVariable("id") int id,RedirectAttributes attributes,Model m) {
 	        m.addAttribute("UserClickedshowproduct", "true");
-	        m.addAttribute("productList", productDAO.getProductById(id));
-	    	return "ShowProduct";
+	        attributes.addFlashAttribute("PList", productDAO.getProductByCategoryID(id));
+	        return "redirect:/";
+
 	    }
-	
-	
+
+*/	
 	
 	
 	
@@ -152,10 +154,9 @@ public class HomeController {
 public String ShowProductByCategory(@PathVariable("id") int id,RedirectAttributes attributes,Model m) {
 	
 	logger.info("Listing the Product by Category ID:");
-    m.addAttribute("UserClickedshowproduct", "true");
-    m.addAttribute("ListProduct", productDAO.getProductByCategoryID(id));
+    attributes.addFlashAttribute("PList", productDAO.getProductByCategoryID(id));
     logger.info("Listed the product by Category ID:"+id);
-	return "WelcomePage";
+    return "redirect:/";
 }
 
 }

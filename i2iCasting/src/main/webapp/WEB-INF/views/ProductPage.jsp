@@ -94,7 +94,7 @@
 	<div class="form-group">
 		<label for="Product Image" class="col-xs-4 control-label">Product Image</label>
 		<div class="col-xs-4">
-		<input type="file" name="file" class="form-control" />
+		<input type="file" name="image" class="form-control" />
 		</div>
 	</div>
 	
@@ -106,12 +106,12 @@
 		<div class="col-xs-4">
 		
 			
-		<c:if test="${category.id==0}">
-		<input type="submit" value="Add Category" id="btn-add" class="btn btn-primary" >
+		<c:if test="${product.id==0}">
+		<input type="submit" value="Add Product" id="btn-add" class="btn btn-primary" >
 		
-		</c:if> <c:if test="${category.id!=0}">
+		</c:if> <c:if test="${product.id!=0}">
 		
-	   <input type="submit" value="Update Category" id="btn-update" class="btn btn-primary" >
+	   <input type="submit" value="Update Product" id="btn-update" class="btn btn-primary" >
 	  </c:if>
 		
 		
@@ -123,7 +123,7 @@
 		<table class="table table-striped table-bordered"  style="width: 80%">
 			<thead>
 				<tr>
-					<th width="2%">S.N</th>
+					<th width="2%">S.No</th>
 					<th width="2%">product ID</th>
 					<th width="2%">product Name</th>
 					<th width="2%">product Description</th>
@@ -131,7 +131,9 @@
 					<th width="2%">Product InStock</th>
 					<th width="2%">Product Category</th>
 					<th width="2%">Product Supplier</th>
+					<th width="2%">Product Image</th>
 					<th width="2%">Product Action</th>
+					
 				</tr>
 			</thead>
 			<tbody>
@@ -145,15 +147,19 @@
 						<td><c:out value="${product.instock}" /></td>
 						<td><c:out value="${product.category_id}" /></td>
 						<td><c:out value="${product.supplier_id}" /></td>
+						<td><div class="thumbnail">
+								<img height="100px" width="100px" alt="${product.id }"
+									src="<c:url value="/resources/images/${product.id }.jpg"></c:url>">
+							</div>
 						
 						<td><nobr>
 <a class="btn btn-primary" href="editproduct/${product.id}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
 
-<a class="btn btn-primary"  href="removeproduct/${product.id}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete
-								</a>
+<a class="btn btn-primary"  href="removeproduct/${product.id}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</a>
 
 							</nobr></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
+		

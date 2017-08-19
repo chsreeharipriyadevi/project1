@@ -1,8 +1,6 @@
-<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" isELIgnored="false"%>
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" isELIgnored="false"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+ 
 <!-- <!DOCTYPE html>
  --><html>
 <head>
@@ -497,7 +495,7 @@ First product box start here
 	
 		<div class="row">
 		
-		<c:forEach items="${ListProduct}" var="product">
+		<c:forEach items="${PList}" var="product">
 				<div class="col-md-5 col-sm-12 col-xs-12">
 					<div class="product-image"> 
 						<!-- <img src="images/products/p3.png" alt="194x228" class="img-responsive rotprod"> --> 
@@ -507,7 +505,7 @@ First product box start here
 						src="<c:url value="/resources/images/${product.id}.jpg"></c:url>"></a>
 						
 						
-<a href="ShowProduct/${product.id}"> <img src="<c:url value="/resources/images/${product.id }.jpg"  class="img-responsive rotprod"></c:url>"></a>
+<a href="ShowProduct/${product.id}"> <img src="<c:url value="/resources/images/${product.id}.jpg"  class="img-responsive rotprod"></c:url>"></a>
 						<span class="tag2 sale">
 							SALE
 						</span> 
@@ -560,4 +558,3 @@ First product box start here
 
 </body>
 </html>
- --%>

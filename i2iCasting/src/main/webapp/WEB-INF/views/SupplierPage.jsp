@@ -88,8 +88,7 @@
 						<td><nobr>
 <a class="btn btn-primary" href="editsupplier/${supplier.id}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
 
-<a class="btn btn-primary"  href="removesupplier/${supplier.id}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete
-								</a>
+<a class="btn btn-primary"  href="removesupplier/${supplier.id}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</a>
 
 							</nobr></td>
 					</tr>

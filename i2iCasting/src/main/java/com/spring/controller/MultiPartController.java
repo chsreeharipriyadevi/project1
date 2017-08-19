@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class MultiPathController {
+public class MultiPartController {
 	
 	public static void upload(String path,MultipartFile file,String filename)
 	{

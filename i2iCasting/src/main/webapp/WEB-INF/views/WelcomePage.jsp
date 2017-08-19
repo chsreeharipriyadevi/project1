@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Example of Bootstrap 3 Dropdowns within a Navbar</title>
+<title>i2iCasting</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -20,6 +20,7 @@
 </style>
 </head>
 <body>
+${message}
 <div class="bs-example">
     <nav id="myNavbar" class="navbar navbar-inverse" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -35,7 +36,7 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-               <!--  <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Profile</a></li>
                     <li class="dropdown">
@@ -48,24 +49,24 @@
                             <li><a href="#">Trash</a></li>
                         </ul>
                     </li>
-                </ul> -->
+                </ul>
                 
                 <ul class="nav navbar-nav">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Profile</a></li>
                     <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Category<b class="caret"></b></a>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" data-hover="dropdown" data-animations="fadeInDown fadeInRight fadeInUp fadeInLeft" >Category<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li class="categeory">
                  <c:forEach items="${categoryList}" var="category" >
-                <%--  <a class="alink" id="mycategory" href="navproducts/${category.id}"> --%>
+               
                      <a class="alink" href=" nav/<c:out value="${category.id}" />">
                  	   <c:out value="${category.categoryName}" />
                      </a>
-             <%-- <c:out value="${category.categoryName}" /> --%> 
+          
                
               
-              <%--    <a class="alink" href=" <c:out value="${category.categoryName}" />"></a>		 --%>	
+           	
 					</c:forEach></li>
                    		 </ul>
                      
@@ -102,7 +103,7 @@
 <c:choose>
 		<c:when test="${LoginPageClicked}">
 			<c:import url="/WEB-INF/views/LoginPage.jsp"></c:import>
-		</c:when>
+		</c:when>     
 	</c:choose>
 
 
@@ -168,5 +169,4 @@
 
 	  
 </body>
-</html>           
-<%-- <%@include file="ListCategory.jsp" %>       --%>    
+</html>         

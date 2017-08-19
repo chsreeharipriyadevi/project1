@@ -73,7 +73,7 @@
 		<table class="table table-striped table-bordered"  style="width: 80%">
 			<thead>
 				<tr>
-					<th width="2%" style="background-color: blue;">S.N</th>
+					<th width="2%" style="background-color: blue;">S.No</th>
 					<th width="2%">Category ID</th>
 					<th width="2%">Category Name</th>
 					<th width="2%">Category Description</th>
@@ -91,8 +91,7 @@
 						<td><nobr>
 <a class="btn btn-primary" href="editcategory/${category.id}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
 
-<a class="btn btn-primary"  href="removecategory/${category.id}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete
-								</a>
+<a class="btn btn-primary"  href="removecategory/${category.id}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</a>
 
 							</nobr></td>
 					</tr>

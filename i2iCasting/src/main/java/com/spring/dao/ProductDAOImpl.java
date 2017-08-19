@@ -2,8 +2,6 @@ package com.spring.dao;
 
 import java.util.List;
 
-
-
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +26,23 @@ public class ProductDAOImpl implements ProductDAO {
 	@SuppressWarnings({ "unchecked" })
 	@Transactional
 	public List<Product> list() {
-		List<Product> product = sessionFactory.getCurrentSession().createCriteria(Product.class).list();
-		return product;
+		List<Product> listProduct = (List<Product>) sessionFactory.getCurrentSession().createCriteria(Product.class).list();
+		return listProduct;
 	}
 
+	
+	/*@Transactional
+	public List<Category> list() {
+		@SuppressWarnings("unchecked")
+		List<Category> listCategory = (List<Category>) sessionFactory.getCurrentSession()
+				.createCriteria(Category.class)
+				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+
+		return listCategory;
+	}*/
+
+	
+	
 	@Transactional
 	public Product getProductById(int product_id) {
 		String hql = "from" + " Product" + " where id=" + product_id;
@@ -78,6 +89,16 @@ public class ProductDAOImpl implements ProductDAO {
 	@Transactional
 	public List<Product> getProductByCategoryID(int category_id) {
 		
+		String hql = "from Product where category_id= "+category_id;
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Product> catproducts = (List<Product>) query.list();
+		return catproducts;
+	}
+
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Transactional
+	public List<Product> navproduct(int category_id) {
 		String hql = "from Product where category_id= "+category_id;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		List<Product> catproducts = (List<Product>) query.list();

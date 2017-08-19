@@ -16,7 +16,7 @@
 
 
 	<div class="form-group">
-		<label for="Supplier Name" class="col-xs-4 control-label">Email</label>
+		<label for="Enter email address" class="col-xs-4 control-label">Email</label>
 		<div class="col-xs-4">
 			<input name="j_username" type ="text"  class="form-control" />
 		</div>
@@ -25,7 +25,7 @@
 	<div class="form-group">
 		<label for="code" class="col-xs-4 control-label">Password</label>
 		<div class="col-xs-4">
-			<input name="j_password" id="merocode"  placeholder="Enter Password" maxlength="15" class="form-control" />
+			<input name="j_password" id="merocode"  type ="password" placeholder="Enter Password" maxlength="15" class="form-control" />
 		</div>
 	</div>
 
