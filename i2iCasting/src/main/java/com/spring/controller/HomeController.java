@@ -143,9 +143,7 @@ public class HomeController {
 	        m.addAttribute("UserClickedshowproduct", "true");
 	        attributes.addFlashAttribute("PList", productDAO.getProductByCategoryID(id));
 	        return "redirect:/";
-
 	    }
-
 */	
 	
 	

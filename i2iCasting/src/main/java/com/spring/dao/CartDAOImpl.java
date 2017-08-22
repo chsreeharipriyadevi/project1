@@ -2,8 +2,7 @@ package com.spring.dao;
 
 import java.util.List;
 
-
-
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +38,15 @@ public class CartDAOImpl implements CartDAO {
 			return list.get(0);
 		}
 		return null;
+	}
+
+     @Transactional
+     @SuppressWarnings({ "unchecked", "deprecation" })
+	public List<Cart> list() {
+		List<Cart> listCart = (List<Cart>)sessionFactory.getCurrentSession().createCriteria(Cart.class).setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+		
+		return listCart;
+		
 	}
 
 }

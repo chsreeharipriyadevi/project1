@@ -1,4 +1,4 @@
-<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -27,29 +27,24 @@ $(document).ready(function(){
 		<c:forEach items="${navproducts}" var="product">
 			<div class="col-xs-3 w3-animate-zoom">
 				<div class="img">
-					<a href="${ProductList}"> <img height="192px"
+					<a href="${PList}"> <img height="192px"
 						width="192px" alt="${product.id}"
 						src="<c:url value="/resources/images/${product.id }.jpg"></c:url>">
 					</a>
 
 					<img height="192px" width="192px"  alt="${product.id}"
-						src="<c:url value="/resources/images/product/${product.id}.jpg"></c:url>"></a>
+						src="<c:url value="/resources/images/product/${product.id}.jpg"></c:url>">
 					<div class="desc">
 						<p>
 
 							${product.name}<br> <i class="fa fa-inr" aria-hidden="true"></i>
 							${product.price}
-							<c:choose>
-								<c:when test="${LoggedIn}">
-									<form action="addtoCart/${userid}/${product.id}">
+									<form action="addtoCart/${product.id}">
 										<input type="submit" value="Add to Cart"
 											class="btn btn-xs btn-success btn-block">
 
 									</form>
-								</c:when>
-							</c:choose>
-						</p>
-
+												
 					</div>
 				</div>
 			</div>
@@ -64,4 +59,4 @@ $(document).ready(function(){
 
 
 
-</body> --%>
+</body>

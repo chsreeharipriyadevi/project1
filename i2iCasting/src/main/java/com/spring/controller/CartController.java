@@ -42,7 +42,7 @@ public class CartController {
 			model.addAttribute("message", p.getName() +"is already exist");
 			item.setSubTotal(item.getProductPrice() + (q*p.getPrice()));
 			cartDAO.saveProductToCart(item);
-			return "WelcomePage";
+			return "cart";
 		} else {
 			Cart item = new Cart();
 			Product p = productDAO.getProductById(id);
@@ -53,9 +53,17 @@ public class CartController {
 			item.setSubTotal(q * p.getPrice());
 			item.setProductPrice(p.getPrice());
 			cartDAO.saveProductToCart(item);
-			return "redirect:/view/";
+			return "redirect:/cart";
 		}
     	
+    }
+    
+    @RequestMapping(value="/cart")
+    public String cartPage(Model model){
+    	model.addAttribute("cart", new Cart());
+    	model.addAttribute("cartList", cartDAO.list());
+    	
+    	return "CartPage";
     }
 
 }
